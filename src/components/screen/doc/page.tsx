@@ -124,10 +124,10 @@ function SectionHeader({
       </FadeUp>
       <div>
 
-      <h1 className="text-4xl mb-1 font-semibold leading-tight text-slate-950">
+      <h1 className="md:text-4xl sm:text-3xl text-2xl mb-1 font-semibold leading-tight text-slate-950">
         {title}
       </h1>
-      <p className="max-w-xl text-base leading-7 text-slate-500">{subtitle}</p>
+      <p className="max-w-xl md:text-base text-sm md:leading-7 leading-6 text-slate-500">{subtitle}</p>
       </div>
     </div>
   );
@@ -164,7 +164,7 @@ const sectionColors: Record<
 
 function ImageCard({ image }: { image: StaticImageData }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+    <div className="overflow-hidden md:rounded-2xl rounded-lg border border-slate-200 bg-white shadow-sm">
       <img
         src={image.src}
         alt={image.src}
@@ -196,7 +196,7 @@ function StepMeta({
         </span>
       </div>
       <div>
-        <h2 className="text-2xl font-semibold text-slate-950">{step.heading}</h2>
+        <h2 className="md:text-2xl text-xl  font-semibold text-slate-950">{step.heading}</h2>
         <p className="text-sm leading-7 text-slate-500">{step.description}</p>
       </div>
       {/* <RouteBox
@@ -224,7 +224,7 @@ function StepSection({
       {steps.map((step, index) => (
         <div key={`${color}-step-${index}`}>
           {showGrid ? (
-            <div className="grid items-start gap-12 lg:grid-cols-[65%_35%]">
+            <div className="grid items-start md:gap-12 gap-8 lg:grid-cols-[65%_35%]">
               <div>
                 <StepMeta step={step} stepIndex={index} c={c} />
               </div>
@@ -260,7 +260,7 @@ function SectionDivider() {
 export default function AuthStepsSection() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-950">
-      <div className="mx-auto max-w-6xl px-4 py-28 space-y-20">
+      <div className="mx-auto max-w-6xl px-4 py-28 md:space-y-20 space-y-10">
 
         <section>
           <SectionHeader

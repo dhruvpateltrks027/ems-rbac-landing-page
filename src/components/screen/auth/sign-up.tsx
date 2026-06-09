@@ -192,7 +192,7 @@ export default function SignUp() {
           {/* Top bar */}
           <div className="flex items-center justify-between border-b border-gray-100 px-6 py-3">
             <div className="flex items-center gap-2.5">
-             <div className="flex h-9 w-9 items-center justify-center rounded bg-slate-900 text-md font-semibold text-white">
+              <div className="flex h-9 w-9 items-center justify-center rounded bg-slate-900 text-md font-semibold text-white">
                 TR
               </div>
               <div>
@@ -206,10 +206,11 @@ export default function SignUp() {
             </div>
             <Badge variant="outline" className="text-xs">
               <Link
-                href="/https://ems-rbac.netlify.app/"
+                href="https://ems-rbac.netlify.app"
+                target="_self"
                 className="text-slate-600 flex items-center hover:text-slate-900"
               >
-                 <ArrowLeftIcon className="mr-2 h-4 w-4" /> Back to site
+                <ArrowLeftIcon className="mr-2 h-4 w-4" /> Back to site
               </Link>
             </Badge>
           </div>
@@ -303,9 +304,7 @@ export default function SignUp() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <Label className="text-sm  text-slate-700">
-                      Password
-                    </Label>
+                    <Label className="text-sm  text-slate-700">Password</Label>
                     <Input
                       required
                       type="password"
@@ -349,17 +348,13 @@ export default function SignUp() {
                 </div>
               )}
 
-              <Button
-                type="submit"
-                disabled={loading}
-                className="h-10 w-full"
-              >
+              <Button type="submit" disabled={loading} className="h-10 w-full">
                 {loading
                   ? "Please wait…"
                   : stage === "otp"
                     ? "Verify and continue "
                     : "Create account "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
 
               {stage === "otp" && (
