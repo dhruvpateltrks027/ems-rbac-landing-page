@@ -27,11 +27,11 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="mx-auto w-full max-w-7xl px-4 pb-24 lg:px-6">
+    <section id="how-it-works" className="mx-auto w-full max-w-7xl px-4 md:pb-24 sm:pb-16 pb-10 lg:px-6">
       <FadeUp>
-        <div className="rounded-3xl border border-border/70 bg-white/95 p-8 shadow-sm">
+        <div className="rounded-3xl border border-border/70 bg-white/95 p-4 sm:p-6md:p-8 shadow-sm">
           <FadeUp delay={0.05}>
-            <div className="mb-10 text-center">
+            <div className="md:mb-10 mb-6 text-center">
               <FadeUp delay={0}>
                 <div className="relative inline-flex rounded-full p-[1px] overflow-hidden">
                   <div className="absolute inset-0 animate-spin-slow bg-border border-border/70" />
@@ -39,7 +39,7 @@ export default function HowItWorksSection() {
                     <span className="h-2.5 w-2.5 rounded-full bg-slate-500" />
                     <AnimatedShinyText
                       shimmerWidth={120}
-                      className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 whitespace-nowrap"
+                      className="md:text-[10px] text-[8px] font-semibold uppercase tracking-[0.2em] text-slate-700 whitespace-nowrap"
                     >
                       How the platform works
                     </AnimatedShinyText>
@@ -47,10 +47,10 @@ export default function HowItWorksSection() {
                   </div>
                 </div>
               </FadeUp>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              <h2 className="mt-4 text-2xl sm:text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
                 A clear workflow for your RBAC panel
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
+              <p className="mx-auto sm:mt-4 mt-2 max-w-2xl text-sm sm:leading-7 leading-6 text-slate-600 md:text-base">
                 Guide users through organizations, members, roles, and integrations so they understand the product instantly.
               </p>
             </div>
@@ -59,12 +59,12 @@ export default function HowItWorksSection() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <ScaleIn key={step.title} delay={0.1 + index * 0.08} className="h-full">
-                <div className="flex flex-col rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-sm h-full">
-                  <div className="mb-4 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-foreground text-sm font-semibold text-white">
+                <div className="flex flex-col rounded-3xl border border-slate-200/80 bg-slate-50 sm:p-6 p-4 shadow-sm h-full">
+                  <div className="sm:mb-4 mb-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-foreground text-sm font-semibold text-white">
                     {index + 1}
                   </div>
                   <h3 className="text-lg font-semibold text-slate-950">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
+                  <p className="sm:mt-3 mt-2 text-sm sm:leading-6 leading-5 text-slate-600">{step.description}</p>
                 </div>
               </ScaleIn>
             ))}

@@ -54,14 +54,14 @@ const items = [
 
 export default function CapabilityTimeline() {
   return (
-    <section id="features" className="mx-auto max-w-2xl px-6 pt-10 pb-24">
+    <section id="features" className="mx-auto max-w-2xl px-6 pt-10 md:pb-24 pb-16">
       {/* Header */}
       <FadeUp>
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center lg:mb-16 mb-12">
           <span className="inline-flex items-center gap-1.5 bg-gray-900 text-gray-100 text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full mb-5">
             ✦ Features
           </span>
-          <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
             Built for modern{" "}
             <span className="italic font-semibold text-gray-700">SaaS</span>{" "}
             platforms

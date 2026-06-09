@@ -10,6 +10,8 @@ import { RoleSteps } from "@/lib/constants/docs/roleSteps";
 import { ConfigureSteps } from "@/lib/constants/docs/configureSteps";
 import { WebhookSteps } from "@/lib/constants/docs/webhookSteps";
 import { ServiceApiKeySteps } from "@/lib/constants/docs/serviceApiKeySteps";
+import { FadeUp } from "@/components/common/animation";
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 
 export type StepItem = {
   number: number;
@@ -102,14 +104,31 @@ function SectionHeader({
 }) {
   return (
     <div className="mb-7 space-y-4">
-      <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-medium text-slate-500 shadow-sm">
+      {/* <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-medium text-slate-500 shadow-sm">
         <span className={`h-2 w-2 rounded-full ${badgeColor}`} />
         {badge}
-      </div>
-      <h1 className="text-4xl font-semibold leading-tight text-slate-950">
+      </div> */}
+         <FadeUp delay={0}>
+        <div className="relative  inline-flex rounded-full p-[1px] overflow-hidden">
+          <div className="absolute inset-0 animate-spin-slow bg-border border-border/70" />
+          <div className="relative flex items-center gap-2 rounded-full bg-white px-4 py-2">
+             <span className={`h-2 w-2 rounded-full ${badgeColor}`} />
+            <AnimatedShinyText
+              shimmerWidth={120}
+              className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500 whitespace-nowrap"
+            >
+              {badge}
+            </AnimatedShinyText>
+          </div>
+        </div>
+      </FadeUp>
+      <div>
+
+      <h1 className="text-4xl mb-1 font-semibold leading-tight text-slate-950">
         {title}
       </h1>
       <p className="max-w-xl text-base leading-7 text-slate-500">{subtitle}</p>
+      </div>
     </div>
   );
 }
@@ -177,8 +196,8 @@ function StepMeta({
         </span>
       </div>
       <div>
-      <h2 className="text-2xl font-semibold text-slate-950">{step.heading}</h2>
-      <p className="text-sm leading-7 text-slate-500">{step.description}</p>
+        <h2 className="text-2xl font-semibold text-slate-950">{step.heading}</h2>
+        <p className="text-sm leading-7 text-slate-500">{step.description}</p>
       </div>
       {/* <RouteBox
         method={step.route.method}
@@ -256,7 +275,7 @@ export default function AuthStepsSection() {
 
         <SectionDivider />
 
-        <section className="space-y-14">
+        <section >
           <SectionHeader
             badge="Organization Docs"
             badgeColor="bg-sky-500"

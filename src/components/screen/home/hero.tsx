@@ -7,7 +7,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="items-center pb-14 pt-10 lg:pb-24 lg:pt-24">
+    <section className="items-center md:pb-14 pb-10  lg:pb-24 pt-24">
       <div className="lg:col-span-2">
         <div className="relative overflow-hidden px-6 py-10 text-center md:px-10 md:py-14 lg:px-16 lg:py-20">
 
@@ -18,7 +18,7 @@ const Hero = () => {
                 <span className="h-2.5 w-2.5 rounded-full bg-slate-500" />
                 <AnimatedShinyText
                   shimmerWidth={120}
-                  className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 whitespace-nowrap"
+                  className="md:text-[10px] text-[8px] font-semibold uppercase tracking-[0.2em] text-slate-700 whitespace-nowrap"
                 >
                   Platform reference for Trks RBAC
                 </AnimatedShinyText>
@@ -43,10 +43,10 @@ const Hero = () => {
 
           {/* Saare shapes ek FadeIn mein — no extra motion imports */}
           <FadeIn delay={0.3} className="pointer-events-none absolute inset-0 -z-10 opacity-70">
-            <div className="absolute left-[8%] top-[14%] h-24 w-24 rounded-full border border-slate-200/80" />
-            <div className="absolute right-[10%] top-[18%] h-20 w-20 rounded-3xl border border-slate-200/80" />
-            <div className="absolute bottom-[18%] left-[20%] h-16 w-16 rounded-2xl border border-slate-200/80" />
-            <div className="absolute bottom-[12%] right-[18%] h-28 w-28 rounded-full border border-slate-200/80" />
+            <div className="hidden md:block absolute left-[8%] top-[14%] h-24 w-24 rounded-full border border-slate-200/80" />
+            <div className="hidden md:block absolute right-[10%] top-[18%] h-20 w-20 rounded-3xl border border-slate-200/80" />
+            <div className=" hidden md:block absolute bottom-[18%] left-[20%] h-16 w-16 rounded-2xl border border-slate-200/80" />
+            <div className="hidden md:block absolute bottom-[12%] right-[18%] h-28 w-28 rounded-full border border-slate-200/80" />
           </FadeIn>
 
         </div>

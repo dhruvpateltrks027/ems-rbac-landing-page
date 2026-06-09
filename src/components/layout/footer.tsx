@@ -1,33 +1,55 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="left-0 right-0 bottom-0 z-30 border-t border-border/70 bg-white/95">
-      <div className="mx-auto w-full max-w-7xl px-4 py-6 lg:px-6">
-        <div className="flex flex-col gap-4 px-5 py-2 md:flex-row md:items-center md:justify-between">
-         <div className="flex items-center gap-3">
-             <Link href="/">
-              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-foreground text-sm font-bold text-white shadow-sm">
+    <footer className="border-t border-slate-200 bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          {/* Logo & Content */}
+          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:text-left">
+            <Link href="/" className="group">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-slate-950 text-sm font-bold text-white shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
                 TR
               </div>
             </Link>
-             <div>
 
-            <p className="text-sm font-semibold text-slate-950">Trks RBAC</p>
-            <p className="text-sm text-slate-500">Secure organization, user, and role management for modern applications.</p>
-             </div>
+            <div>
+              <h3 className="text-sm font-semibold text-slate-950">
+                Trks RBAC
+              </h3>
+
+              <p className="mt-1 max-w-md text-xs leading-relaxed text-slate-500 sm:text-sm">
+                Secure organization, user, and role management for modern
+                applications.
+              </p>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
-            {/* <Link href="#platform" className="inline-flex h-9 items-center justify-center rounded-full bg-foreground px-3 text-xs font-semibold text-white transition hover:bg-foreground/90">
-              Platform
-            </Link>
-            <Link href="#features" className="inline-flex h-9 items-center justify-center rounded-full bg-slate-100 px-3 text-xs font-semibold text-slate-700 transition hover:bg-slate-200">
-              Features
-            </Link> */}
-            <Link href="https://trks-rbac-admin.netlify.app/login/" className="inline-flex h-9 items-center justify-center rounded-lg bg-slate-950 px-3 text-xs font-semibold text-white transition hover:bg-slate-800">
+          {/* Actions */}
+          <div className="flex items-center justify-center md:justify-end">
+            <Link
+              href="https://trks-rbac-admin.netlify.app/login/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex h-10 items-center gap-2 rounded-lg bg-slate-950 px-5 text-sm font-medium text-white transition-all duration-300 hover:bg-slate-800 hover:shadow-lg"
+            >
               Sign in
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
+          </div>
+        </div>
+
+        {/* Bottom Line */}
+        <div className="mt-6 border-t border-slate-200 pt-4">
+          <div className="flex flex-col items-center justify-between gap-2 text-center text-xs text-slate-500 sm:flex-row">
+            <p>
+              © {new Date().getFullYear()} Trks RBAC. All rights reserved.
+            </p>
+
+            <p>
+              Built for secure organization & role management.
+            </p>
           </div>
         </div>
       </div>

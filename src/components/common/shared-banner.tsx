@@ -15,7 +15,7 @@ export default function SharedBanner({
 }) {
   return (
     <div>
-      <h1 className="mx-auto max-w-4xl text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+      <h1 className="mx-auto md:text-4xl font-semibold tracking-tight text-foreground text-3xl lg:text-5xl">
         {title}
       </h1>
 
@@ -25,7 +25,7 @@ export default function SharedBanner({
 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         {primaryCta && (
-          <Button asChild className="group">
+          <Button asChild  className="group h-11 w-full sm:w-auto sm:min-w-[160px]">
             <Link href={primaryCta.href}>
               <span>{primaryCta.label}</span>
               <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -34,7 +34,7 @@ export default function SharedBanner({
         )}
 
         {secondaryCta && (
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="h-11 w-full sm:w-auto sm:min-w-[160px]">
             <Link href={secondaryCta.href}>
               {secondaryCta.label}
             </Link>
