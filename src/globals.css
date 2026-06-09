@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Professional web palette: neutral background, navy primary */
+  --background: 210 24% 98%;
+  --foreground: 215 15% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 15% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 15% 12%;
+  --primary: 215 60% 28%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 223 47% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 223 47% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 160 84% 96%;
+  --accent-foreground: 160 84% 22%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 160 84% 39%;
+  --radius: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+* {
+  @apply border-border;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: 'Public Sans', 'Inter', sans-serif;
+  background-image:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.12), transparent 34%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.14), transparent 28%),
+    linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background)) 100%);
+}
+
+a {
+  @apply transition-colors;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.18);
+}
+
+@layer base {
+  html,
+  body,
+  #__next {
+    min-height: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+
+}
+
+@layer utilities {
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+
+  @keyframes float-medium {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+      transform: translate3d(0, -14px, 0) rotate(0.7deg);
+    }
+  }
+
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      transform: translate3d(8px, -6px, 0);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 9s ease-in-out infinite;
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.7s ease-out both;
+  }
+
+  .animate-float-medium {
+    animation: float-medium 7s ease-in-out infinite;
+  }
+
+  .animate-float-fast {
+    animation: float-slow 5s ease-in-out infinite;
+  }
+
+  .animate-drift {
+    animation: drift 12s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3.5s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
+    background-size: 200% 100%;
+    animation: shimmer 2.8s linear infinite;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .platform-shell {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+  }
+
+  .clerk-grid-background {
+    background-image:
+      linear-gradient(to right, #cbd5e1 1px, transparent 1px),
+      linear-gradient(to bottom, #cbd5e1 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .platform-card-soft {
+    @apply rounded-[1.75rem] border border-border/70 bg-white/90 shadow-soft backdrop-blur-xl;
+  }
+
+  .platform-grid-card {
+    @apply rounded-[1.5rem] border border-border/70 bg-white/90;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 24px 90px rgba(15, 23, 42, 0.12);
+  }
+}

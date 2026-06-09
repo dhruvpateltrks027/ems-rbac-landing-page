@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ["swagger-ui-react"],
+  output: "export",       // Generate static out/ folder
+  trailingSlash: true,    // Required for static export SPA routing
 };
 
-export default nextConfig;
+module.exports = nextConfig;
