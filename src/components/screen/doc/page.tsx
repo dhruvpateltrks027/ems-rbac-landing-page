@@ -1,6 +1,6 @@
 
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import type { StaticImageData } from "next/image";
 import { AuthSteps } from "@/lib/constants/docs/authSteps";
 import { OrgSteps } from "@/lib/constants/docs/orgSteps";
@@ -10,7 +10,7 @@ import { RoleSteps } from "@/lib/constants/docs/roleSteps";
 import { ConfigureSteps } from "@/lib/constants/docs/configureSteps";
 import { WebhookSteps } from "@/lib/constants/docs/webhookSteps";
 import { ServiceApiKeySteps } from "@/lib/constants/docs/serviceApiKeySteps";
-import { FadeUp } from "@/components/common/animation";
+import { ApiSteps } from "@/lib/constants/docs/apiSteps";
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 
 export type StepItem = {
@@ -108,7 +108,6 @@ function SectionHeader({
         <span className={`h-2 w-2 rounded-full ${badgeColor}`} />
         {badge}
       </div> */}
-         <FadeUp delay={0}>
         <div className="relative  inline-flex rounded-full p-[1px] overflow-hidden">
           <div className="absolute inset-0 animate-spin-slow bg-border border-border/70" />
           <div className="relative flex items-center gap-2 rounded-full bg-white px-4 py-2">
@@ -121,7 +120,7 @@ function SectionHeader({
             </AnimatedShinyText>
           </div>
         </div>
-      </FadeUp>
+
       <div>
 
       <h1 className="md:text-4xl sm:text-3xl text-2xl mb-1 font-semibold leading-tight text-slate-950">
@@ -160,6 +159,7 @@ const sectionColors: Record<
     badge: "bg-indigo-500",
   },
   teal: { dot: "bg-teal-400", icon: "text-teal-500", badge: "bg-teal-500" },
+  cyan: { dot: "bg-cyan-400", icon: "text-cyan-500", badge: "bg-cyan-500" },
 };
 
 function ImageCard({ image }: { image: StaticImageData }) {
@@ -361,6 +361,19 @@ export default function AuthStepsSection() {
           />
           <hr className="mb-8 border-slate-200" />
           <StepSection steps={ServiceApiKeySteps} color="teal" showGrid={false} />
+        </section>
+
+        <SectionDivider />
+
+        <section>
+          <SectionHeader
+            badge="Integration API Reference"
+            badgeColor="bg-cyan-500"
+            title="Use EMS-RBAC APIs in your external project."
+            subtitle="These API docs mirror the frontend API reference: auth, users, organizations, roles, members, invitations, and required keys."
+          />
+          <hr className="mb-8 border-slate-200" />
+          <StepSection steps={ApiSteps} color="cyan" showGrid={false} />
         </section>
 
       </div>
