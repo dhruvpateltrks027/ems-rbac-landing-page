@@ -206,7 +206,7 @@ export default function SignUp() {
             </div>
             <Badge variant="outline" className="text-xs">
               <Link
-                href="/"
+                href="/https://ems-rbac.netlify.app/"
                 className="text-slate-600 flex items-center hover:text-slate-900"
               >
                  <ArrowLeftIcon className="mr-2 h-4 w-4" /> Back to site
